@@ -6,11 +6,8 @@ export const createBlog = `mutation CreateBlog($input: CreateBlogInput!) {
     id
     name
     posts {
-      items {
-        id
-        title
-      }
-      nextToken
+      id
+      title
     }
   }
 }
@@ -20,11 +17,8 @@ export const updateBlog = `mutation UpdateBlog($input: UpdateBlogInput!) {
     id
     name
     posts {
-      items {
-        id
-        title
-      }
-      nextToken
+      id
+      title
     }
   }
 }
@@ -34,11 +28,8 @@ export const deleteBlog = `mutation DeleteBlog($input: DeleteBlogInput!) {
     id
     name
     posts {
-      items {
-        id
-        title
-      }
-      nextToken
+      id
+      title
     }
   }
 }

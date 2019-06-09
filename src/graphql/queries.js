@@ -6,11 +6,8 @@ export const getBlog = `query GetBlog($id: ID!) {
     id
     name
     posts {
-      items {
-        id
-        title
-      }
-      nextToken
+      id
+      title
     }
   }
 }
@@ -25,7 +22,8 @@ export const listBlogs = `query ListBlogs(
       id
       name
       posts {
-        nextToken
+        id
+        title
       }
     }
     nextToken
