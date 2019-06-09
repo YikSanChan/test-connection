@@ -6,8 +6,11 @@ export const getBlog = `query GetBlog($id: ID!) {
     id
     name
     posts {
-      id
-      title
+      items {
+        id
+        title
+      }
+      nextToken
     }
   }
 }
@@ -22,8 +25,7 @@ export const listBlogs = `query ListBlogs(
       id
       name
       posts {
-        id
-        title
+        nextToken
       }
     }
     nextToken
@@ -34,6 +36,13 @@ export const getPost = `query GetPost($id: ID!) {
   getPost(id: $id) {
     id
     title
+    blog {
+      id
+      name
+      posts {
+        nextToken
+      }
+    }
   }
 }
 `;
@@ -46,6 +55,10 @@ export const listPosts = `query ListPosts(
     items {
       id
       title
+      blog {
+        id
+        name
+      }
     }
     nextToken
   }

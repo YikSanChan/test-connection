@@ -1,9 +1,10 @@
 type Blog @model {
   id: ID!
   name: String!
-  posts: [Post]
+  posts: [Post] @connection(name: "BlogPosts")
 }
 type Post @model {
   id: ID!
   title: String!
+  blog: Blog @connection(name: "BlogPosts")
 }

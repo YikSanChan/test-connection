@@ -6,8 +6,11 @@ export const onCreateBlog = `subscription OnCreateBlog {
     id
     name
     posts {
-      id
-      title
+      items {
+        id
+        title
+      }
+      nextToken
     }
   }
 }
@@ -17,8 +20,11 @@ export const onUpdateBlog = `subscription OnUpdateBlog {
     id
     name
     posts {
-      id
-      title
+      items {
+        id
+        title
+      }
+      nextToken
     }
   }
 }
@@ -28,8 +34,11 @@ export const onDeleteBlog = `subscription OnDeleteBlog {
     id
     name
     posts {
-      id
-      title
+      items {
+        id
+        title
+      }
+      nextToken
     }
   }
 }
@@ -38,6 +47,13 @@ export const onCreatePost = `subscription OnCreatePost {
   onCreatePost {
     id
     title
+    blog {
+      id
+      name
+      posts {
+        nextToken
+      }
+    }
   }
 }
 `;
@@ -45,6 +61,13 @@ export const onUpdatePost = `subscription OnUpdatePost {
   onUpdatePost {
     id
     title
+    blog {
+      id
+      name
+      posts {
+        nextToken
+      }
+    }
   }
 }
 `;
@@ -52,6 +75,13 @@ export const onDeletePost = `subscription OnDeletePost {
   onDeletePost {
     id
     title
+    blog {
+      id
+      name
+      posts {
+        nextToken
+      }
+    }
   }
 }
 `;
