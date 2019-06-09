@@ -1,0 +1,9 @@
+type Blog @model {
+  id: ID!
+  name: String!
+  posts: [Post] @connection
+}
+type Post @model {
+  id: ID!
+  title: String!
+}
